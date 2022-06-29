@@ -1,0 +1,56 @@
+
+
+<p>Listado de Héroes</p>
+<!--
+<div *ngIf=" heroeBorrado !== '' ">
+    <h3> Heroe Borrado: <small> {{heroeBorrado}} </small></h3>
+    
+</div>
+
+<div *ngIf="heroeBorrado">
+    <h3> Heroe Borrado: <small> {{heroeBorrado}} </small></h3>
+    
+</div>
+
+Esta parte del codigo quiere decir que si el el héroe
+existe o no está vacío entonces muestre el héroe borrado.
+
+Si no existe o está vacio entonces muestra el mensaje que dice
+que no se ha borrado nada.
+
+<div *ngIf="!heroeBorrado">
+    <h3>No ha borrado nada. </h3>
+    
+</div>
+-->
+
+
+<div *ngIf="heroeBorrado; else noBorrado">
+    <h3> Heroe Borrado: <small> {{heroeBorrado}} </small></h3>
+    
+</div>
+
+
+<ng-template #noBorrado>
+    <h3>No ha borrado nada. </h3>
+    
+</ng-template>
+
+
+<button (click)="BorrarHeroe()">
+    Borrar
+</button>
+
+
+<ul>
+    <li *ngFor="let heroe of heroes; let i = index">
+        {{i + 1}} {{heroe}}
+    </li>
+</ul>
+
+
+
+
+
+
+
